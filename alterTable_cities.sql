@@ -57,12 +57,6 @@ ALTER TABLE `geodata`.`_cities`
 ADD INDEX `region_id_idx` (`region_id` ASC) VISIBLE;
 ;
 
-ALTER TABLE `geodata`.`_cities` 
-ADD CONSTRAINT `region_id`
-  FOREIGN KEY (`region_id`)
-  REFERENCES `geodata`.`_regions` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
   
 SELECT * FROM geodata._cities;
 UPDATE _cities SET region_id = 0 WHERE region_id IS NULL;
